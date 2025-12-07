@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>IbuxStore Official - Top Up Robux</title>
+<style>
+body { background:#020b22; font-family:Poppins,sans-serif; color:#00e5ff; margin:0; padding:0; }
+header { padding:15px; text-align:center; border-bottom:2px solid #00e5ff; font-size:24px; font-weight:bold; }
+nav { text-align:center; margin-bottom:20px; }
+nav a { color:#00e5ff; margin:0 10px; text-decoration:none; font-weight:bold; }
+nav a:hover { color:#0088ff; }
+.container { width:95%; max-width:430px; margin:auto; background:rgba(0,10,30,0.85); padding:20px; border-radius:10px; box-shadow:0 0 30px #00e5ff; }
+input, select { width:100%; padding:10px; margin:10px 0; border-radius:6px; border:none; }
+button { width:100%; padding:12px; border:none; border-radius:6px; background:#00e5ff; color:#000; font-weight:bold; cursor:pointer; transition:.3s; }
+button:hover { background:#0088ff; color:#fff; }
+.privacy { font-size:13px; margin-top:8px; }
+.privacy a { color:#00b7ff; }
+</style>
+</head>
+<body>
+<header>IbuxStore Official</header>
+<nav>
+<a href="index.html">Top Up Robux</a> | <a href="lainnya.php">Lainnya</a>
+</nav>
+<div class="container">
+<form action="backend.php" method="POST">
+  <input type="hidden" name="produk" value="Top Up Robux">
+  <label>Email:</label>
+  <input type="email" name="email" required>
+  <label>Username Roblox:</label>
+  <input type="text" name="username" required>
+  <label>Pilih Paket Robux:</label>
+  <select name="paket" required>
+    <option value="">-- Pilih Paket --</option>
+    <option value="80 Robux">80 Robux - Rp 11.000</option>
+    <option value="160 Robux">160 Robux - Rp 21.000</option>
+    <option value="400 Robux">400 Robux - Rp 50.000</option>
+    <option value="800 Robux">800 Robux - Rp 95.000</option>
+    <option value="1200 Robux">1200 Robux - Rp 145.000</option>
+    <option value="2000 Robux">2000 Robux - Rp 230.000</option>
+  </select>
+  <input type="hidden" name="harga" id="harga" value="">
+  <label>Pilih Metode Pembayaran:</label>
+  <select name="pembayaran" required>
+    <option value="">-- Pilih Metode --</option>
+    <option>DANA</option>
+    <option>Gopay</option>
+    <option>OVO</option>
+    <option>ShopeePay</option>
+    <option>QRIS</option>
+  </select>
+  <div class="privacy">
+    <input type="checkbox" id="cekbox"> Saya setuju dengan <a href="privacy.html">Privacy & Policy</a>
+  </div>
+  <button type="submit" id="pesanBtn" disabled>Pesan Sekarang</button>
+</form>
+</div>
+<script>
+document.getElementById('cekbox').addEventListener('change', function(){document.getElementById('pesanBtn').disabled = !this.checked;});
+</script>
+</body>
+</html>
